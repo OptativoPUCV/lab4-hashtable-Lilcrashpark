@@ -179,3 +179,34 @@ Wed 24 Apr 2024 03:49:22 PM UTC:
  tests:  8|3
 total_score: 40/70
 3612af2
+Wed 24 Apr 2024 04:01:28 PM UTC: 
+ hashmap.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:89:31: error: request for member ‘capacity’ in something not a structure or union
+   89 |   long posicion = hash(map,key->capacity);
+      |                               ^~
+hashmap.c:89:24: error: passing argument 1 of ‘hash’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   89 |   long posicion = hash(map,key->capacity);
+      |                        ^~~
+      |                        |
+      |                        HashMap * {aka struct HashMap *}
+hashmap.c:26:19: note: expected ‘char *’ but argument is of type ‘HashMap *’ {aka ‘struct HashMap *’}
+   26 | long hash( char * key, long capacity) {
+      |            ~~~~~~~^~~
+hashmap.c:90:79: error: expected statement before ‘)’ token
+   90 |   while(map->buckets[posicion] == NULL || map->buckets[posicion]->key == NULL))
+      |                                                                               ^
+hashmap.c:92:49: error: expected ‘)’ before ‘{’ token
+   92 |     if(is_equal(map->buckets[posicion]->key,key)
+      |       ~                                         ^
+      |                                                 )
+   93 |     {
+      |     ~                                            
+hashmap.c:100:3: error: expected expression before ‘}’ token
+  100 |   }
+      |   ^
+cc1: all warnings being treated as errors
+Compilation failed
+ef71adc
