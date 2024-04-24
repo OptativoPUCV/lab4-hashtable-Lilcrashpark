@@ -229,3 +229,19 @@ hashmap.c:100:3: error: expected expression before ‘}’ token
       |   ^
 Compilation failed
 3f7dd7c
+Wed 24 Apr 2024 04:03:22 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:92:49: error: expected ‘)’ before ‘{’ token
+   92 |     if(is_equal(map->buckets[posicion]->key,key)
+      |       ~                                         ^
+      |                                                 )
+   93 |     {
+      |     ~                                            
+hashmap.c:100:3: error: expected expression before ‘}’ token
+  100 |   }
+      |   ^
+Compilation failed
+d43298a
